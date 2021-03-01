@@ -4,19 +4,20 @@ public class Gravitacija {
 
     public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);
-    	int visina = sc.nextInt();
-    	int pospesek = izracun(visina);
+    	double visina = sc.nextInt();
+    	double pospesek = izracun(visina);
     	izpis(visina, pospesek);
     	System.out.println("Sej OIS je kul.");
+        sc.close();
     }
-    public static int izracun(int v) {
-        int stevec = 6.674 * Math.pow(10,-11) * 5.972 * Math.pow(10,24);
-        int imenovalec = 6.371 * Math.pow(10,6) + v;
+    public static double izracun(double v) {
+        double stevec = 6.674 * Math.pow(10,-11) * 5.972 * Math.pow(10,24);
+        double imenovalec = 6.371 * Math.pow(10,6) + v;
         return (stevec / (imenovalec * imenovalec));
     }
 
-    public static void izpis(int v, int g) {
-        System.out.println(v);
-        System.out.println(g);
+    public static void izpis(double v, double g) {
+        System.out.printf("Visina: %.2f%n", v);
+        System.out.printf("Gravitacijski pospesek: %.2f%n", g);
     }
 }
